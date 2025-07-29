@@ -19,6 +19,9 @@ def code(s, now):
         if vcnt > 0 and ccnt > 1:
             print(now)
 
+    if C - s < L - len(now):
+        return
+
     for i in range(s, C):
         code(i + 1, now + alphabets[i])
 
