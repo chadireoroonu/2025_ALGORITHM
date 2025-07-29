@@ -18,15 +18,14 @@ queue = deque([1])
 
 while queue:
     x = queue.popleft()
-    if x == 100:
-        break
     
     for i in range(1, 7):
         nx = x + i
-
-        nx = shift[nx] if nx in shift else nx
+        if nx in shift:
+            nx = shift[nx]
         if nx < 101 and count[nx] > count[x] + 1:
             count[nx] = count[x] + 1
+            if nx == 100:
+                print(count[nx])
+                break
             queue.append(nx)
-
-print(count[100])
