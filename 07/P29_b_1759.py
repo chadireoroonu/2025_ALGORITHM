@@ -8,19 +8,18 @@ alphabets = list(map(str, sys.stdin.readline().split()))
 alphabets.sort()
 vowels = {'a', 'e', 'i', 'o', 'u'}
 
-def code(s, now, t, n):
+def code(s, now):
     if len(now) == L:
-        if  t and n > 1:
-            return print(now)
-        else:
-            return
-    for i in range(s, C):
-        if alphabets[i] in check:
-            code(i + 1, now + alphabets[i], True, n)
-        else:
-            if t:
-                code(i + 1, now + alphabets[i], True, n + 1)
+        vcnt = ccnt = 0
+        for c in now:
+            if c in vowels:
+                vcnt += 1
             else:
-                code(i + 1, now + alphabets[i], False, n + 1)
+                ccnt += 1
+        if vcnt > 0 and ccnt > 1:
+            print(now)
 
-code(0, '', False, 0)
+    for i in range(s, C):
+        code(i + 1, now + alphabets[i])
+
+code(0, '')
