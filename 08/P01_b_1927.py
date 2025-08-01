@@ -1,3 +1,6 @@
+# 최소 힙
+# https://www.acmicpc.net/problem/1927
+
 import sys, heapq
 sys.stdin = open("input.txt")
 
