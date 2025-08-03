@@ -1,3 +1,6 @@
+# 수 찾기
+# https://www.acmicpc.net/problem/1920
+
 import sys
 sys.stdin = open("input.txt")
 
