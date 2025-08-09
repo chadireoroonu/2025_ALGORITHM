@@ -1,10 +1,11 @@
 # 가장 긴 바이토닉 부분 수열
 # https://www.acmicpc.net/problem/11054
+# https://chadireoroonu.tistory.com/323
 
 import sys
 sys.stdin = open("input.txt")
 
-def find(arr): # 증가, 감소 구하는 로직
+def find(arr): # 증가하는 부분 수열 구하기
     dp = [1] * N
     for i in range(len(arr)):
         for j in range(i):
@@ -15,8 +16,11 @@ def find(arr): # 증가, 감소 구하는 로직
 N = int(sys.stdin.readline())
 A = list(map(int, sys.stdin.readline().split()))
 
+ # 증가하는 부분 수열
 plus = find(A)
-A.reverse()
+
+# 감소하는 부분 수열
+A.reverse() 
 minus = find(A)
 minus.reverse()
 
