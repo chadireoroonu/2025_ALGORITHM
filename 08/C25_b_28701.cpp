@@ -1,3 +1,6 @@
+// 세제곱의 합
+// https://www.acmicpc.net/problem/28701
+
 #include <iostream>
 
 using namespace std;
